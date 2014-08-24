@@ -14,9 +14,10 @@
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => "tinymce" %>
   </p>
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+<%= tinymce %>
