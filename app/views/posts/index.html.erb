@@ -1,0 +1,15 @@
+<% if current_user %>
+	<%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %>
+<% end %>
+
+<% if @posts %>
+	<ul class="post-list">
+		<% @posts.each do |post| %>
+			<li class="post">
+				<h1><%= link_to post.title, post, class: 'post_title' %></h1>
+				<div class="date"><%= post.created_at.strftime("%-m/%d/%Y") %></div>
+				<%= post.content %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
