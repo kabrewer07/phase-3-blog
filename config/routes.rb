@@ -1,6 +1,6 @@
 Blog::Application.routes.draw do
   resources :posts#, only: [:index]
-  root to: 'posts#index'
+  root to: 'projects#index'
   resources :users
 
   get 'signup' => 'users#new'
