@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body {
+/*body {
 	padding:30px 0;
 	font-size:14px;
 	line-height:22px;
@@ -95,9 +95,9 @@ img.right {
 pre, code {
 	font-family: monospace;
     font-size: 1em;
-    white-space: pre-wrap;          /* css-3 */
-	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-	white-space: -pre-wrap;        /* Opera 4-6 */
+    white-space: pre-wrap;          
+	white-space: -moz-pre-wrap; 
+	white-space: -pre-wrap;      
 	white-space: -o-pre-wrap;
 }
 a.new-post {
@@ -161,4 +161,4 @@ input[type=submit] {
 		margin:0;
 		padding:0 3% 30px;
 	}
-}
+}*/
