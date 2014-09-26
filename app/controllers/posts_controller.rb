@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   include PostsHelper
 
   def index
+    puts 'GETTING HERE'
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])
     else
