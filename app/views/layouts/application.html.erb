@@ -3,9 +3,9 @@
 <head>
   <title>Kim Brewer</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/style.css" />
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -65,14 +65,10 @@
     </header><!-- end header-->
 
 	<div id="main">
+		<p class="flash"><%= flash.notice %></p>
 		<div class="container">
-    	<div class="row">
-      	<div class="home-top col-sm-12">
-					<p class="flash"><%= flash.notice %></p>
-				</div>
-			</div>
+			<%= yield %>
 		</div>
-		<%= yield %>
 	</div>
 
 	<footer id="footer">
@@ -80,15 +76,15 @@
 	    <div class="row">
 	      <div class="widgets">
 	        <div class="footer-widget col-sm-4">
-	          <h5>About Us</h5>
-	          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat.</p>
+	          <h5>About Me</h5>
+	          <p>I love coding!</p>
 	        </div>
 	        <!-- end footer-widget -->
 	        <div class="footer-widget col-sm-4">
 	          <h5>From The Blog</h5>
 
 	          <% if current_user %>
-							<%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %>
+							<p><%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %></p>
 						<% end %>
 
 						<% if @posts %>
@@ -115,36 +111,30 @@
 	      <!-- end widgets -->
 	    </div>
 	    <!-- end row -->
-	    <% if session[:user_id] %>
-		    <%= "Logged in as #{current_user.username}" %> | 
-		    <%= link_to "Logout", "/logout", method: :delete %>
-		  <% else %>
-		  	<%= link_to 'Sign Up', new_user_path %> or Login
-		    <%= form_tag "/login", method: "post" do %>
-				  <div class="field">
-				    <%= label_tag :username %>
-				    <%= text_field_tag :username %>
-				  </div>
-				  <div class="field">
-				    <%= label_tag :password %>
-				    <%= password_field_tag :password %>
-				  </div>
-				  <div class="actions">
-				    <%= submit_tag "Login" %>
-				  </div>
-				<% end %>
-
-		  <% end %>
+	    <div class="login">
+		    <% if session[:user_id] %>
+			    <%= "Logged in as #{current_user.username}" %> | 
+			    <%= link_to "Logout", "/logout", method: :delete %>
+			  <% else %>
+			  	<div class="signup"><%= link_to 'Sign Up', new_user_path %> or Login</div>
+			    <%= form_tag "/login", method: "post" do %>
+					  <div class="field">
+					    <%= label_tag :username %>
+					    <%= text_field_tag :username %>
+					  </div>
+					  <div class="field">
+					    <%= label_tag :password %>
+					    <%= password_field_tag :password %>
+					  </div>
+					  <div class="field">
+					    <%= submit_tag "Login" %>
+					  </div>
+					<% end %>
+			  <% end %>
+			 </div>
 	  </div>
 	  <!-- end container -->
 	</footer>
 	<!-- end footer -->
-
-	<!-- JavaScript Files -->
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="javascripts/bootstrap.min.js"></script>
-  <script src="javascripts/jquery.easing.min.js"></script>
-  <script src="javascripts/jquery.mixitup.min.js"></script>
-	<script src="javascripts/script.js"></script>
 </body>
 </html>

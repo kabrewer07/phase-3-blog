@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
 	//mixItUp Portfolio
 	$('.portfolio').mixItUp();
 	

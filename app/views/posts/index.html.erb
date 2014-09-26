@@ -1,6 +1,4 @@
-<% if current_user %>
-	<%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %>
-<% end %>
+
 
 <% if @posts %>
 	<ul class="post-list">
@@ -13,3 +11,83 @@
 		<% end %>
 	</ul>
 <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="home-top col-sm-12">
+      <h3>Blog</h3>
+    </div>
+    <!-- end home-top -->
+  </div>
+  <!-- end row -->
+  
+	<% if current_user %>
+		<%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %>
+	<% end %>
+</div>
+<!-- end container -->
+<section id="blog-no-sidebar">
+  <div class="container blog-no-sidebar">
+    <div class="row">
+      <!-- start content -->
+      <div class="col-sm-12 content">
+        <article>
+          <a href="#"><img src="images/istanbul.jpg" alt="" /></a>
+          <div class="article-content">
+            <ul>
+              <li><i class="fa fa-user"></i> <a href="#">Diamant Gjota</a></li>
+              <li><i class="fa fa-calendar"></i> May/14/2014</li>
+              <li><i class="fa fa-comment"></i> <a href="#">14 Comments</a></li>
+            </ul>
+            <h4><a href="#">Lorem ipsum dolar site blog title</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. </p>
+            <a href="blog-post.html" class="button pull-right">Read more</a>
+          </div>
+        </article>
+        <!-- article -->
+        <article>
+          <a href="#"><img src="images/istanbul.jpg" alt="" /></a>
+          <div class="article-content">
+            <ul>
+              <li><i class="fa fa-user"></i> <a href="#">Diamant Gjota</a></li>
+              <li><i class="fa fa-calendar"></i> May/14/2014</li>
+              <li><i class="fa fa-comment"></i> <a href="#">14 Comments</a></li>
+            </ul>
+            <h4><a href="#">Lorem ipsum dolar site blog title</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. </p>
+            <a href="blog-post.html" class="button pull-right">Read more</a>
+          </div>
+        </article>
+        <!-- article -->
+        <article>
+          <a href="#"><img src="images/istanbul.jpg" alt="" /></a>
+          <div class="article-content">
+            <ul>
+              <li><i class="fa fa-user"></i> <a href="#">Diamant Gjota</a></li>
+              <li><i class="fa fa-calendar"></i> May/14/2014</li>
+              <li><i class="fa fa-comment"></i> <a href="#">14 Comments</a></li>
+            </ul>
+            <h4><a href="#">Lorem ipsum dolar site blog title</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. </p>
+            <a href="blog-post.html" class="button pull-right">Read more</a>
+          </div>
+        </article>
+        <!-- article -->
+        <div class="pagination text-center">
+          <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end content -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</section>
+<!-- end blog -->

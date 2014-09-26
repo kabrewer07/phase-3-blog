@@ -14,6 +14,26 @@
  *= require_self
  */
 
+ @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
+ @import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700);
+
+ .home-top h3 { 
+ 	text-transform: none; 
+ 	margin-bottom: 20px; 
+ 	font-family: 'Alegreya', serif; 
+ 	font-size:40px;
+	letter-spacing:auto;
+	color:#23afaf;
+	letter-spacing:2px;
+ }
+
+footer .signup {
+	display:none;
+}
+ footer form .field {
+ 	display:inline;
+ }
+
 /*body {
 	padding:30px 0;
 	font-size:14px;
