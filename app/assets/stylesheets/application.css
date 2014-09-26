@@ -17,6 +17,9 @@
  @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
  @import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700);
 
+ .home-top {
+ 	margin:0;
+ }
  .home-top h3 { 
  	text-transform: none; 
  	margin-bottom: 20px; 
