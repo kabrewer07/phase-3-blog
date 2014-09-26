@@ -6,6 +6,9 @@ Blog::Application.routes.draw do
   get 'signup' => 'users#new'
   post 'login' => 'sessions#login'
   delete 'logout' => 'sessions#logout'
+  get 'logout' => 'sessions#logout'
+
+  get 'tags/:tag', to: 'posts#index', as: :tag
 
 
 end
