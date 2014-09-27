@@ -3,7 +3,7 @@
 body { font-family: 'Josefin Slab', serif; color: #3e3e3e; }
 h1, h2, h3, h4, h6 { font-weight: 600; }
 h1 { font-size: 3.45em; }
-h2 { font-size: 3em; }
+h2 { font-size: 2em; }
 h3 { font-size: 2.45em; letter-spacing: 8px; }
 h4 { font-size: 2em; }
 h5 { font-size: 1.8em; }
@@ -244,8 +244,8 @@ ul.pagination li.active a:hover { background: transparent; border-color: #23afaf
 #blog-post-no-sidebar { margin: 140px 0 70px 0; }
 #blog-post-no-sidebar .blog-post-no-sidebar { padding: 0 70px; }
 #blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content { padding: 10px 30px; }
-#blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content ul { text-align: center; margin: 5px 0 20px 0; }
-#blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content ul li { display: inline-block; margin-right: 10px; }
+#blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content ul { margin: 5px 0 20px 0; }
+#blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content ul li { margin-right: 10px; }
 #blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content ul li i.fa { width: 20px; }
 #blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content h4 { margin: 40px 0 20px 0; }
 #blog-post-no-sidebar .blog-post-no-sidebar .content article .article-content blockquote { border-left: 0px dotted #bebebe; color: #080808; font-weight: 600; font-style: italic; margin-left: 40px; }

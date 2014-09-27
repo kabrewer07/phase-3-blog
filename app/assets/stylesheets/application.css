@@ -17,6 +17,10 @@
  @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
  @import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700);
 
+ .navbar-default .navbar-brand {
+ 		text-transform:none;
+ }
+
  .home-top {
  	margin:0;
  }
@@ -36,6 +40,44 @@ footer .signup {
  footer form .field {
  	display:inline;
  }
+
+ #new_post {
+	display:none;
+}
+input, textarea {
+	font-family:'Inconsolata', sans-serif;
+	font-size:13px;
+}
+input[type=text], input[type=password], textarea {
+	padding:5px;
+}
+.new_post input[type=text], .new_post input[type=password], .new_post textarea {
+	width:100%;
+}
+textarea {
+	height:200px;
+}
+input[type=submit] {
+	background-color:#23AFAF;
+	color:#ffffff;
+	font-size:20px;
+}
+
+.tags {
+	margin:15px 0;
+}
+#tag_cloud {
+	margin-top:20px;
+  line-height: 1.6em;
+}
+#tag_cloud a {
+	margin:0 8px 0 0;
+}
+
+.s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+
 
 /*body {
 	padding:30px 0;
