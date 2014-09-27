@@ -123,7 +123,7 @@ form input, textarea { outline: none; }
 #portfolio .inner-portfolio a.filter { text-transform: uppercase; cursor: pointer; font-weight: 600; margin-left: 1.5%; }
 #portfolio .inner-portfolio .portfolio { margin: 25px 0; }
 /*GRID THREE*/
-#portfolio .inner-portfolio .portfolio .mix { width: 30.9%; margin: 1%; position: relative; }
+#portfolio .inner-portfolio .portfolio .mix { width: 30.9%; margin: 1%; position: relative; border:1px solid #d1d1d1;}
 #portfolio .inner-portfolio .portfolio .mix img {width:100%;}
 /*GRID TWO*/
 #grid-two #portfolio .inner-portfolio .portfolio .mix { display: none ; width: 47%; margin: 1%; position: relative; }
