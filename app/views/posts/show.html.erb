@@ -1,7 +1,67 @@
-<h2><%= @post.title %></h2>
-<p><%= @post.content.html_safe %></p>
-<% if current_user %>
-	<p><%= link_to "edit", edit_post_path(@post) %></p>
-	<p><%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Really delete the article?"} %></p>
-<% end %>
-<%= link_to "<< Back to Post List", posts_path %>
+
+<section id="blog-post-no-sidebar">
+  <div class="container blog-post-no-sidebar">
+    <div class="row">
+      <!-- start content -->
+      <div class="col-sm-12 content">
+        <article>
+        	<div class="article-content">
+						<h1><%= @post.title %></h1>
+						<%= @post.content.html_safe %>
+						<% if current_user %>
+							<%= link_to 'Edit', edit_post_path(@post) %> | 
+							<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+						<% end %>
+					</div>
+				</article>
+        <!-- article -->
+      </div>
+      <!-- end content -->
+    </div>
+    <!-- end row -->
+    <p><%= link_to "<< Back to Post List", posts_path %></p>
+  </div>
+  <!-- end container -->
+</section>
+
+<section id="blog-post-no-sidebar">
+  <div class="container blog-post-no-sidebar">
+    <div class="row">
+      <!-- start content -->
+      <div class="col-sm-12 content">
+        <article>
+          <a href="#"><img src="images/istanbul.jpg" alt="" /></a>
+          <div class="article-content">
+            <ul>
+              <li><i class="fa fa-user"></i> <a href="#">Diamant Gjota</a></li>
+              <li><i class="fa fa-calendar"></i> May/14/2014</li>
+              <li><i class="fa fa-comment"></i> <a href="#">14 Comments</a></li>
+            </ul>
+            <h4><a href="#">Lorem ipsum dolar site blog title</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. </p>
+            <blockquote>Lorem ipsum dolar site Blockquote post</blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempoididunt utpoidlabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullacoabris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+        </article>
+        <!-- article -->
+        <div class="leave-comment">
+          <h5>Leave a Comment</h5>
+          <p>Your email address will not be published. Required fields are marked *</p>
+          <form>
+            <input type="text" name="name" class="name" value="*name"/>
+            <input type="text" name="email" class="email" value="*email"/>
+            <input type="text" name="website" class="website" value="website"/>
+            <textarea class="comment">*Comment</textarea>
+            <button>Post Comment</button>
+          </form>
+        </div>
+        <!-- end leave-comment -->
+      </div>
+      <!-- end content -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</section>
+<!-- end blog -->

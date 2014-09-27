@@ -1,6 +1,6 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
-  <div id="error_explanation">
+  <div class="errors">
     <ul>
     <% @post.errors.full_messages.each do |error| %>
       <li><%= error %></li>
@@ -15,6 +15,10 @@
   <p>
     <%= f.label :content %><br />
     <%= f.text_area :content, :class => "tinymce" %>
+  </p>
+  <p>
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
   </p>
   <p>
     <%= f.submit %>

@@ -1,15 +1,43 @@
-<% if current_user %>
-	<%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="home-top col-sm-12">
+      <h3>Blog</h3>
+    </div>
+    <!-- end home-top -->
+  </div>
+  <!-- end row -->
 
-<% if @posts %>
-	<ul class="post-list">
-		<% @posts.each do |post| %>
-			<li class="post">
-				<h1><%= link_to post.title, post, class: 'post_title' %></h1>
-				<div class="date"><%= post.created_at.strftime("%-m/%d/%Y") %></div>
-				<%= post.content.html_safe %>
-			</li>
-		<% end %>
-	</ul>
-<% end %>
+	<% if current_user %>
+		<%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %>
+		<%= render 'posts/form' %>
+	<% end %>
+</div>
+<!-- end container -->
+<section id="blog-no-sidebar">
+  <div class="container blog-no-sidebar">
+    <div class="row">
+      <!-- start content -->
+      <div class="col-sm-12 content">
+      	<% if @posts %>
+					<%= render @posts %>
+				<% end %>
+        
+        <!-- article -->
+        <div class="pagination text-center">
+          <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end content -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</section>
+<!-- end blog -->

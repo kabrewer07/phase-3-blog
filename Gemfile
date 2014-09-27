@@ -33,6 +33,8 @@ gem 'rails_12factor', group: :production
 
 gem 'tinymce-rails'
 
+gem 'acts-as-taggable-on'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

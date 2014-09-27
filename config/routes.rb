@@ -1,11 +1,14 @@
 Blog::Application.routes.draw do
   resources :posts#, only: [:index]
-  root to: 'posts#index'
+  root to: 'projects#index'
   resources :users
 
   get 'signup' => 'users#new'
   post 'login' => 'sessions#login'
   delete 'logout' => 'sessions#logout'
+  get 'logout' => 'sessions#logout'
+
+  get 'tags/:tag', to: 'posts#index', as: :tag
 
 
 end

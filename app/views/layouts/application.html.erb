@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Kim Brewer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
@@ -11,39 +15,123 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div id="sidebar">
-		<h1><a href="/">Aloha!</a></h1>
-		<h2>Welcome to my<br><span class="highlight">Blog</span></h2>
-		<div class="author">By Kim Brewer</div>
-		<div class="header">
-			<% if session[:user_id] %>
-		    <%= "Logged in as #{current_user.username}" %> | 
-		    <%= link_to "Logout", "/logout", method: :delete %>
-		  <% else %>
-		  	<%= link_to 'Sign Up', new_user_path %> or Login
-		    <%= form_tag "/login", method: "post" do %>
-				  <div class="field">
-				    <%= label_tag :username %>
-				    <%= text_field_tag :username %>
-				  </div>
-				  <div class="field">
-				    <%= label_tag :password %>
-				    <%= password_field_tag :password %>
-				  </div>
-				  <div class="actions">
-				    <%= submit_tag "Login" %>
-				  </div>
-				<% end %>
+	<header id="header">
+    	<!-- start Navigation -->
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Kim Brewer</a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="/">Home</a>
+                  <!--<ul class="dropdown-menu">
+                    <li class="active"><a href="index.html">Grid Three</a></li>
+                    <li><a href="home-grid-two.html">Grid Two</a></li>
+                    <li><a href="home-agency.html">Agency</a></li>
+                  </ul>-->
+                </li>
+                <!--<li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>-->
+                <!--<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="project-grid-two.html">Project Grid Two</a></li>
+                    <li><a href="project-grid-three.html">Project Grid Three</a></li>
+                  </ul>
+                </li>-->
+                <li>
+                  <a href="/posts">Blog</a>
+                </li>
+                <li><a href="/">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav><!-- end nav -->
+    </header><!-- end header-->
 
-		  <% end %>
-		</div>
-	</div>
 	<div id="main">
 		<p class="flash"><%= flash.notice %></p>
-		<div class="container">
+		
 			<%= yield %>
-		</div>
+		
 	</div>
 
+	<footer id="footer">
+	  <div class="container">
+	    <div class="row">
+	      <div class="widgets">
+	        <div class="footer-widget col-sm-5">
+	          <h5>About Me</h5>
+	          <p>I am a web developer who is very passionate about coding, learning, and having fun. I have experience in PHP, several e-commerce platforms, front-end development (including JavaScript, jQuery, and AJAX), and more recently in Ruby on Rails. When I am not coding, I love reading, traveling, doing yoga, volunteering, eating great food, and drinking wine.</p>
+	        </div>
+	        <!-- end footer-widget -->
+	        <div class="footer-widget col-sm-4">
+	          <h5>From The Blog</h5>
+
+	          <% if current_user %>
+							<p><%= link_to 'Add New Post', new_post_path, class: "new-post highlight" %></p>
+						<% end %>
+
+						<% if @posts %>
+							<ul class="blog">
+								<% @posts.each do |post| %>
+									<li class="post"><%= link_to post.title, post, class: 'post_title' %></li>
+								<% end %>
+							</ul>
+						<% end %>
+	        </div>
+	        <!-- end footer-widget -->
+	        <div class="footer-widget col-sm-3">
+	          <h5>Get in touch</h5>
+	          <ul class="social">
+	          	<li><i class="fa fa-envelope"></i><a href="mailto:kabrewer07@gmail.com">Email</a></li>
+	          	<li><i class="fa fa-linkedin"></i><a href="http://www.linkedin.com/in/kimbrewer3/">LinkedIn</a></li>
+	          	<li><i class="fa fa-github"></i><a href="https://github.com/kabrewer07">GitHub</a></li>
+	            <li><i class="fa fa-instagram"></i><a target="_blank" href="http://instagram.com/kabrewer07">Facebook</a></li>
+	            <li><i class="fa fa-twitter"></i><a target="_blank" href="https://twitter.com/kimbrewer3">Twitter</a></li>
+	            <li><i class="fa fa-google-plus"></i><a href="https://plus.google.com/+KimBrewer3/">Google Plus</a></li>
+	          </ul>
+	        </div>
+	        <!-- end footer-widget -->
+	      </div>
+	      <!-- end widgets -->
+	    </div>
+	    <!-- end row -->
+	    <div class="login">
+		    <% if session[:user_id] %>
+			    <%= "Logged in as #{current_user.username}" %> | 
+			    <%= link_to "Logout", "/logout", method: :delete %>
+			  <% else %>
+			  	<div class="signup"><%= link_to 'Sign Up', new_user_path %> or Login</div>
+			    <%= form_tag "/login", method: "post" do %>
+					  <div class="field">
+					    <%= label_tag :username %>
+					    <%= text_field_tag :username %>
+					  </div>
+					  <div class="field">
+					    <%= label_tag :password %>
+					    <%= password_field_tag :password %>
+					  </div>
+					  <div class="field">
+					    <%= submit_tag "Login" %>
+					  </div>
+					<% end %>
+			  <% end %>
+			 </div>
+	  </div>
+	  <!-- end container -->
+	</footer>
+	<!-- end footer -->
 </body>
 </html>

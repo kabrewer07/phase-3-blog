@@ -14,7 +14,72 @@
  *= require_self
  */
 
-body {
+ @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
+ @import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700);
+
+ .navbar-default .navbar-brand {
+ 		text-transform:none;
+ }
+
+ .home-top {
+ 	margin:0;
+ }
+ .home-top h3 { 
+ 	text-transform: none; 
+ 	margin-bottom: 20px; 
+ 	font-family: 'Alegreya', serif; 
+ 	font-size:40px;
+	letter-spacing:auto;
+	color:#23afaf;
+	letter-spacing:2px;
+ }
+
+footer .signup {
+	display:none;
+}
+ footer form .field {
+ 	display:inline;
+ }
+
+ #new_post {
+	display:none;
+}
+input, textarea {
+	font-family:'Inconsolata', sans-serif;
+	font-size:13px;
+}
+input[type=text], input[type=password], textarea {
+	padding:5px;
+}
+.new_post input[type=text], .new_post input[type=password], .new_post textarea {
+	width:100%;
+}
+textarea {
+	height:200px;
+}
+input[type=submit] {
+	background-color:#23AFAF;
+	color:#ffffff;
+	font-size:20px;
+}
+
+.tags {
+	margin:15px 0;
+}
+#tag_cloud {
+	margin-top:20px;
+  line-height: 1.6em;
+}
+#tag_cloud a {
+	margin:0 8px 0 0;
+}
+
+.s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+
+
+/*body {
 	padding:30px 0;
 	font-size:14px;
 	line-height:22px;
@@ -95,9 +160,9 @@ img.right {
 pre, code {
 	font-family: monospace;
     font-size: 1em;
-    white-space: pre-wrap;          /* css-3 */
-	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-	white-space: -pre-wrap;        /* Opera 4-6 */
+    white-space: pre-wrap;          
+	white-space: -moz-pre-wrap; 
+	white-space: -pre-wrap;      
 	white-space: -o-pre-wrap;
 }
 a.new-post {
@@ -161,4 +226,4 @@ input[type=submit] {
 		margin:0;
 		padding:0 3% 30px;
 	}
-}
+}*/
